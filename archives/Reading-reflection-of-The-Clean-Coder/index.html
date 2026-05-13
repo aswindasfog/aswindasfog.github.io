@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>《The Clean Coder》讀書心得 | Miles的學習紀錄</title><meta name="author" content="Miles Zhou"><meta name="copyright" content="Miles Zhou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#231021"><meta name="description" content="本書是作者以個人的經驗來闡述什麼是「軟體從業人員的專業精神」。 我看的是中譯本，完整書名是《無瑕的程式碼 番外篇：專業程式設計師的生存之道》，我不是很喜歡這個書名，不過封面的英文書名比中文書名明顯，所以就不重要了，還是內容比較重要。 接下來針對書中提到的幾個面向講講我的感想。 專業 本書第一章就說明專業主義（Professionalism）不僅象徵著榮譽與驕傲，還意味著責任與義務，這點我也很認同，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《The Clean Coder》讀書心得">
+<meta property="og:url" content="https://aswindasfog.github.io/archives/Reading-reflection-of-The-Clean-Coder/">
+<meta property="og:site_name" content="Miles的學習紀錄">
+<meta property="og:description" content="本書是作者以個人的經驗來闡述什麼是「軟體從業人員的專業精神」。 我看的是中譯本，完整書名是《無瑕的程式碼 番外篇：專業程式設計師的生存之道》，我不是很喜歡這個書名，不過封面的英文書名比中文書名明顯，所以就不重要了，還是內容比較重要。 接下來針對書中提到的幾個面向講講我的感想。 專業 本書第一章就說明專業主義（Professionalism）不僅象徵著榮譽與驕傲，還意味著責任與義務，這點我也很認同，">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://github.com/aswindasfog.png">
+<meta property="article:published_time" content="2026-05-13T12:00:10.000Z">
+<meta property="article:modified_time" content="2026-05-13T12:00:10.000Z">
+<meta property="article:author" content="Miles Zhou">
+<meta property="article:tag" content="心得">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/aswindasfog.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "《The Clean Coder》讀書心得",
+  "url": "https://aswindasfog.github.io/archives/Reading-reflection-of-The-Clean-Coder/",
+  "image": "https://github.com/aswindasfog.png",
+  "datePublished": "2026-05-13T12:00:10.000Z",
+  "dateModified": "2026-05-13T12:00:10.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Miles Zhou",
+      "url": "https://github.com/aswindasfog"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://github.com/aswindasfog.png"><link rel="canonical" href="https://aswindasfog.github.io/archives/Reading-reflection-of-The-Clean-Coder/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#231021')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#efdced')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '複製成功',
+    error: '複製失敗',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"作者: Miles Zhou","link":"連結: ","source":"來源: Miles的學習紀錄","info":"著作權歸作者所有。如需商業轉載，請聯絡作者獲得授權，非商業轉載請註明出處。"}},
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《The Clean Coder》讀書心得',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-color: #efdced;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://github.com/aswindasfog.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 關於我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Miles的學習紀錄</span></a><a class="nav-page-title" href="/"><span class="site-name">《The Clean Coder》讀書心得</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首頁</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-user"></i><span> 關於我</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">《The Clean Coder》讀書心得</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2026-05-13T12:00:10.000Z" title="發表於 2026-05-13 20:00:10">2026-05-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2026-05-13T12:00:10.000Z" title="更新於 2026-05-13 20:00:10">2026-05-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%BF%83%E5%BE%97/">心得</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">總字數:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀時間:</span><span>3分鐘</span></span></div></div></div><article class="container post-content" id="article-container"><p>本書是作者以個人的經驗來闡述什麼是「軟體從業人員的專業精神」。</p>
+<p>我看的是中譯本，完整書名是《無瑕的程式碼 番外篇：專業程式設計師的生存之道》，我不是很喜歡這個書名，不過封面的英文書名比中文書名明顯，所以就不重要了，還是內容比較重要。</p>
+<p>接下來針對書中提到的幾個面向講講我的感想。</p>
+<h2 id="專業">專業</h2>
+<p>本書第一章就說明專業主義（Professionalism）不僅象徵著榮譽與驕傲，還意味著責任與義務，這點我也很認同，身為一個程式設計師（Programmer）不是只有寫出符合需求的程式，還要盡可能寫出不會出錯的程式。</p>
+<p>要盡可能讓錯誤發生的機率趨近於 0，就要反覆測試，因此作者建議一開始就設計成易於測試的程式，並採用測試驅動開發（Test Driven Development, TDD），還用一整個章節講述 TDD，以我個人經驗，一旦建立自動化測試流程，TDD的優點就大於缺點，而且開發的系統愈複雜，效果愈好，但也不是說什麼都要TDD，還是要考慮時間因素、功能複雜度之類的。</p>
+<p>我們在專心寫程式時，很容易進入心流狀態，但作者特別不推薦進入心流狀態，因為心流狀態雖然會提高效率，卻無法保證不會犯錯，我個人蠻喜歡進入心流狀態，但也能理解作者不推薦的理由，而且心流狀態還有其他缺點，我也有親身體驗，所以覺得適時用一些措施中斷心流是有助於身心健康的。</p>
+<h2 id="溝通">溝通</h2>
+<p>書中好幾各章節都提到了關於溝通的部分，雖然書中預設的角度是從團隊來看，可能會跟PM、QA或其他RD進行溝通，但我覺得以專案管理的角度來看，不管團隊大小都是可以適用的，就算你是個人開發還是要面對客戶，所以只要面對人就需要好好溝通，這樣才能降低各種風險。</p>
+<p>我特別喜歡第二章「說『不』」，多數人可能會因為權勢、時程、人情或利益等各種壓力下而不敢拒絕其他人，所以作者說要以整體團隊來考量，這樣才能阻止災難發生，不要沒有好好考慮過就承諾試試看，也不要消極抵抗放棄溝通，在此分享這章我最喜歡的一句話：</p>
+<blockquote>
+<p>在衝突中尋求可接受的共同目標，這樣才專業。</p>
+</blockquote>
+<h2 id="管理">管理</h2>
+<p>書中也提到幾個管理層面的議題，有個人層面的工作管理，有團隊層面的專案管理，其實我覺得前面提到的溝通也是管理的一環，所以我推薦每個人都應該要學習一點專案管理方面的知識，而作者最著重的看起來是時間方面的管理，書中有一個章節講時間管理，還有一個章節講預估任務，其他章節也或多或少講到完成期限之類的事情。</p>
+<p>我這邊想分享第九章「時間管理」的一個小節「會議」，作者的會議真理讓我會心一笑：</p>
+<blockquote>
+<p>關於會議有兩條真理：</p>
+<ol>
+<li>
+<p>會議是必需的。</p>
+</li>
+<li>
+<p>會議浪費大量的時間。</p>
+</li>
+</ol>
+</blockquote>
+<p>因此作者給了一些建議，像是：開會要有清晰的議程、如果與自己目前工作無關應該禮貌地拒絕 、會議中如果發生爭執無法在5分鐘內解決，表示這件事不能靠辯論解決，應該先去收集資料之後再討論等等。</p>
+<p>我也認同會議是很重要但很花時間的溝通手段，不過會議怎麼開牽涉到長官領導風格、團隊文化風氣等等，所以這些建議要視情況調整，我個人目前偏好的作法是可以一對一討論就不要開會，可以在辦公室開簡單的站立會議就不要進會議室開會，要進會議室開會至少要有會議目標。</p>
+<h2 id="結語">結語</h2>
+<p>我看這本書是蠻有感觸的，所以這本書推薦給所有的程式設計師，剛出社會的菜鳥可以從中學到資深前輩的經驗，也許能讓自己少採一些坑，而已有開發經驗的老手可能會看到跟自己經驗類似的例子，也有可能你不認同作者的某些觀點，不過這也沒有關係，只要這本書讓你重新思考自己有沒有達到你心中理想的程式設計師，這樣就有收穫了，而且在這個AI重塑工作型態的時代，思考這個問題也變得更重要了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/aswindasfog">Miles Zhou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章連結: </span><span class="post-copyright-info"><a href="https://aswindasfog.github.io/archives/Reading-reflection-of-The-Clean-Coder/">https://aswindasfog.github.io/archives/Reading-reflection-of-The-Clean-Coder/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 授權協議。轉載請註明來源 <a href="https://aswindasfog.github.io" target="_blank">Miles的學習紀錄</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BF%83%E5%BE%97/">心得</a></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/archives/Personal-website-setup-record/" title="個人網站架設記錄"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">個人網站架設記錄</div></div><div class="info-2"><div class="info-item-1">目的 架設個人網站是希望分享學習筆記、放作品集，後續也可以擴充其他內容。 方案選擇 主要需求有：   方便管理與轉移文章：可以在本機管理文章，日後有需要可以方便轉移。   支援分類或標籤管理：有分類既方便自己管理，也方便別人瀏覽。   支援程式碼語法突顯：分享學習筆記時應該會包含程式碼，有這功能程式碼比較好讀。   免費：目前不想多花錢。   簡易地自訂外觀：要有自己的特色，但我不是設計出身，所以希望簡單就好，不用花太多時間弄得很花俏。   選擇架站方式   部落格平台 一開始考慮 Blogger、Medium、Vocus 這種部落格平台，因為我以前用過 Blogger，但覺得使用上會受限，資料在平台上也不好管理跟轉移，所以先當備案。   架站平台 以前有聽過 WordPress、Wix 這類架站平台，研究發現好像要花錢租伺服器，而且複雜度頗高，所以不考慮。   靜態網站產生器（Static Site Generation） 觀摩別人公開履歷上附的網址很多都是 Github Pages，才進一步認識什麼是靜態網站產生器，它是主要是將個人撰寫的 markdown 檔案依照範本轉換靜...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://github.com/aswindasfog.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Miles Zhou</div><div class="author-info-description">記錄自己學了什麼東西</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/aswindasfog"><i class="fab fa-github"></i><span>Github</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%88%E6%A5%AD"><span class="toc-number">1.</span> <span class="toc-text">專業</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%9D%E9%80%9A"><span class="toc-number">2.</span> <span class="toc-text">溝通</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E8%AA%9E"><span class="toc-number">4.</span> <span class="toc-text">結語</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/archives/Reading-reflection-of-The-Clean-Coder/" title="《The Clean Coder》讀書心得">《The Clean Coder》讀書心得</a><time datetime="2026-05-13T12:00:10.000Z" title="發表於 2026-05-13 20:00:10">2026-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/archives/Personal-website-setup-record/" title="個人網站架設記錄">個人網站架設記錄</a><time datetime="2026-03-20T12:01:33.000Z" title="發表於 2026-03-20 20:01:33">2026-03-20</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2026 By Miles Zhou</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日夜模式切換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂端"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(async () => {
+  const showKatex = () => {
+    document.querySelectorAll('#article-container .katex').forEach(el => el.classList.add('katex-show'))
+  }
+
+  if (!window.katex_js_css) {
+    window.katex_js_css = true
+    await btf.getCSS('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css')
+    if (false) {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/copy-tex.min.js')
+    }
+  }
+
+  showKatex()
+})()</script></div></div></body></html>
